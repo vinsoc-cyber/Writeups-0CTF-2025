@@ -1,0 +1,1 @@
+flag = b'0ctf{test_flag}'

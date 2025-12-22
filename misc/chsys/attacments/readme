@@ -1,0 +1,16 @@
+The template dir is too large to include, so I'll give you the output of `version` command here
+
+```
+15.0-RELEASE
+Candidates for chsys:
+/usr/local/freebsd-bases/14.3
+/usr/local/freebsd-bases/15.0
+/usr/local/freebsd-bases/13.5
+```
+
+As for `freebsd-bases`, they are really the content of official base.txz from freebsd, nothing special
+
+And this is all you need. You should be able to solve it without connecting the server. GL HF
+
+One more thing to notice, resource limit at spawn.sh may change on server, depends on number of connections
+

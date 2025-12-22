@@ -1,0 +1,58 @@
+diff --git a/ref/ntt.c b/ref/ntt.c
+index 2f2eb10..f2627e6 100644
+--- a/ref/ntt.c
++++ b/ref/ntt.c
+@@ -1,4 +1,5 @@
+ #include <stdint.h>
++#include <stdio.h>
+ #include "params.h"
+ #include "ntt.h"
+ #include "reduce.h"
+@@ -82,6 +83,7 @@ void ntt(int16_t r[256]) {
+   int16_t t, zeta;
+ 
+   k = 1;
++  printf("leak = [");
+   for(len = 128; len >= 2; len >>= 1) {
+     for(start = 0; start < 256; start = j + len) {
+       zeta = zetas[k++];
+@@ -91,7 +93,11 @@ void ntt(int16_t r[256]) {
+         r[j] = r[j] + t;
+       }
+     }
++    for(j = 0; j < 256; j++) {
++      printf("%d,", r[j]);
++    }
+   }
++  printf("]\n");
+ }
+ 
+ /*************************************************
+diff --git a/ref/params.h b/ref/params.h
+index 0802c74..c2934d6 100644
+--- a/ref/params.h
++++ b/ref/params.h
+@@ -13,8 +13,11 @@
+ #define KYBER_NAMESPACE(s) pqcrystals_kyber768_ref_##s
+ #elif (KYBER_K == 4)
+ #define KYBER_NAMESPACE(s) pqcrystals_kyber1024_ref_##s
++#elif (KYBER_K == 12)
++/* keep namespace label for compatibility even though K is non-standard */
++#define KYBER_NAMESPACE(s) pqcrystals_kyber1024_ref_##s
+ #else
+-#error "KYBER_K must be in {2,3,4}"
++#error "KYBER_K must be in {2,3,4,12}"
+ #endif
+ 
+ #define KYBER_N 256
+@@ -38,6 +41,10 @@
+ #define KYBER_ETA1 2
+ #define KYBER_POLYCOMPRESSEDBYTES    160
+ #define KYBER_POLYVECCOMPRESSEDBYTES (KYBER_K * 352)
++#elif KYBER_K == 12
++#define KYBER_ETA1 2
++#define KYBER_POLYCOMPRESSEDBYTES    160
++#define KYBER_POLYVECCOMPRESSEDBYTES (KYBER_K * 352)
+ #endif
+ 
+ #define KYBER_ETA2 2

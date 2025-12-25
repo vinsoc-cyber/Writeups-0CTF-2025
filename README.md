@@ -1,6 +1,9 @@
 # 0CTF 2025 Writeups
 VinSOC team's solutions for 0CTF 2025
 
+<img width="1717" height="948" alt="image" src="https://github.com/user-attachments/assets/ca0689c2-be2c-437a-9f8e-0ccaf7fc0183" />
+
+
 ## Team Statistics
 - **Total Solved**: 9 challenges (plus check-in and survey)
 - **Ranking**: Top 20 out of 453 teams

@@ -1,7 +1,7 @@
 # 0CTF 2025 Writeups
 VinSOC team's solutions for 0CTF 2025
 
-<img width="1717" height="948" alt="image" src="https://github.com/user-attachments/assets/ca0689c2-be2c-437a-9f8e-0ccaf7fc0183" />
+<img width="1717" height="948" alt="image" src="https://github.com/user-attachments/assets/68cc984a-455c-4e66-a88a-0f5557596b9a" />
 
 
 ## Team Statistics
